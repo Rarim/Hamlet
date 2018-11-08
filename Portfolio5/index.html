@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<style>
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.mySlides {
+  display: none;
+  width: 250%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+</style>
+
+<body>
+
+<nav>
+
+<h3> <a href="index.html"target="_self">Work</a> <a href="about.html"target="_self">About</a> <a href="contact.html"target="_self">Contact</a> </h3>
+
+</nav>
+
+
+<h1 class="tittle">Work</h1>
+
+<div class="flex-container">
+    <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Type1')">Type1</button>
+    </div>
+
+    <div class="tab">
+     <button class="tablinks" onclick="openCity(event, 'Type2')">Type2</button>
+    </div>
+
+    <div class="tab">
+     <button class="tablinks" onclick="openCity(event, 'Type3')">Type3</button>
+    </div>
+</div>
+
+
+    <div id="Type1" class="tabcontent">
+
+        <div class="column">
+         <img src="Floresta.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="cursor">
+        </div>
+
+        <div class="column">
+         <img src="Morte.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="cursor">
+        </div>
+
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+
+		<div class="modal-content">
+
+        <div class="mySlides">
+         <img src="Floresta.jpg" alt="Avatar" class="image" style="width:30%">
+        </div>
+
+        <div class="mySlides">
+         <img src="Morte.jpg" alt="Avatar" class="image" style="width:50%">
+        </div>
+    </div>
+    </div> 
+ 
+
+    </div>
+
+    <div id="Type2" class="tabcontent">
+ 
+      <div class="column">
+         <img src="Floresta.jpg" style="width:100%" onclick="openModal_2();currentSlide(3)" class="cursor">
+        </div>
+
+        <div class="column">
+         <img src="Morte.jpg" style="width:100%" onclick="openModal_2();currentSlide(4)" class="cursor">
+        </div>
+
+	<div id="myModal_2" class="modal">
+		<span class="close cursor" onclick="closeModal_2()">&times;</span>
+
+		<div class="modal-content">
+
+        <div class="mySlides">
+         <img src="Floresta.jpg" alt="Avatar" class="image" style="width:30%">
+        </div>
+
+        <div class="mySlides">
+         <img src="Morte.jpg" alt="Avatar" class="image" style="width:50%">
+        </div>
+    </div>
+    </div> 
+
+    </div>
+
+    <div id="Type3" class="tabcontent">
+
+     <div class="column">
+         <img src="Floresta.jpg" style="width:100%" onclick="openModal_3();currentSlide(5)" class="cursor">
+        </div>
+
+        <div class="column">
+         <img src="Morte.jpg" style="width:100%" onclick="openModal_3();currentSlide(6)" class="cursor">
+        </div>
+
+	<div id="myModal_3" class="modal">
+		<span class="close cursor" onclick="closeModal_3()">&times;</span>
+
+		<div class="modal-content">
+
+        <div class="mySlides">
+         <img src="Floresta.jpg" alt="Avatar" class="image" style="width:30%">
+        </div>
+
+        <div class="mySlides">
+         <img src="Morte.jpg" alt="Avatar" class="image" style="width:50%">
+        </div>
+
+    </div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    
+}
+
+
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+function openModal_2() {
+  document.getElementById('myModal_2').style.display = "block";
+}
+
+function closeModal_2() {
+  document.getElementById('myModal_2').style.display = "none";
+}
+
+function openModal_3() {
+  document.getElementById('myModal_3').style.display = "block";
+}
+
+function closeModal_3() {
+  document.getElementById('myModal_3').style.display = "none";
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+
+</script>
+
+</body>
+
+
+</html>
