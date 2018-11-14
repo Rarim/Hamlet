@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Recente</title>
+  <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="index.html" target="_self">Trabalhos</a>
+  <a href="recent.html" target="_self" class="active">Recentes</a>
+  <a href="about.html" target="_self">Sobre</a>
+  <a href="contact.html" target="_self">Contato</a>
+</div>
+
+<h1>Recentes</h1>
+
+
+<div class="recent">
+
+  <div class="recentImg">
+         <img src="dance.png" alt="dance" class="demo" onclick="openModal();currentSlide(1)">
+        </div>
+
+  <div class="recentImg">
+         <img src="Poison.png" alt="poison" class="demo" onclick="openModal();currentSlide(2)">
+        </div>
+
+   <div class="recentImg">
+         <img src="house.jpg" alt="house" class="demo" onclick="openModal();currentSlide(3)">
+        </div>
+
+    <div class="recentImg">
+         <img src="Mario.png" alt="Mario" class="demo" onclick="openModal();currentSlide(4)">
+        </div>
+
+        <div class="recentImg">
+         <img src="hellboy.png" alt="hellboy" class="demo" onclick="openModal();currentSlide(5)">
+        </div>
+
+        <div class="recentImg">
+         <img src="SMD_adv.png" alt="SMD_adv" class="demo" onclick="openModal();currentSlide(6)">
+        </div>
+
+        <div class="recentImg">
+         <img src="aviso.jpg" alt="aviso" class="demo" onclick="openModal();currentSlide(7)">
+        </div>
+
+        <div class="recentImg">
+         <img src="howl.png" alt="howl" class="demo" onclick="openModal();currentSlide(8)">
+        </div>
+</div>
+
+
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+
+		<div class="modal-content">
+
+      <div class="mySlides">
+         <img src="dance.png" alt="Avatar" class="image" style="width:20%">
+        </div>
+
+      <div class="mySlides">
+         <img src="Poison.png" alt="Avatar" class="image" style="width:13%">
+        </div>
+
+      <div class="mySlides">
+         <img src="house.jpg" alt="Avatar" class="image" style="width:30%">
+        </div>
+
+        <div class="mySlides">
+         <img src="Mario.png" alt="Avatar" class="image" style="width:10%">
+        </div>
+
+        <div class="mySlides">
+         <img src="hellboy.png" alt="Avatar" class="image" style="width:20%">
+        </div>
+
+        <div class="mySlides">
+         <img src="SMD_adv.png" alt="Avatar" class="image" style="width:10%">
+        </div>
+
+        <div class="mySlides">
+         <img src="aviso.jpg" alt="Avatar" class="image" style="width:20%">
+        </div>
+
+         <div class="mySlides">
+         <img src="howl.png" alt="Avatar" class="image" style="width:20%">
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+
+<script>
+
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+</script>
+</html>
